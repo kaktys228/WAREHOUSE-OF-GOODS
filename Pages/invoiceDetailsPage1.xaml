@@ -1,0 +1,42 @@
+﻿<Page x:Class="курсовая_работа.Pages.invoiceDetailsPage1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:курсовая_работа.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Детальное содержание накладной" Loaded="Page_Loaded">
+
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Foreground="White"  x:Name="InvoiceLabel" FontSize="20" HorizontalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="4"  >Детальное описание накладной №</Label>
+        <DataGrid x:Name="DataGrid" Background="#5854ab" AutoGenerateColumns="False" IsReadOnly="True" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="3" SelectionChanged="DataGrid_SelectionChanged" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Цена" Binding="{Binding PRICE}"/>
+                <DataGridTextColumn Header="Количество" Binding="{Binding COUNTS}"/>
+                <DataGridTextColumn Header="Наименование" Binding="{Binding DELIVERY.NAMES}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Foreground="White" x:Name="EditButton" Content="изменить" Grid.ColumnSpan="2" Width="150" Height="50" Grid.Column="1" Grid.Row="4" Click="EditButton_Click" >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Page>

@@ -1,0 +1,22 @@
+﻿<Window x:Class="курсовая_работа.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:курсовая_работа"
+        mc:Ignorable="d"
+        Title="{Binding ElementName=mainframe, Path=Content.Title}" Height="600" Width="900">
+    <Grid Background="{StaticResource AppBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button x:Name="BackButtno" Height="25" HorizontalAlignment="Right" VerticalAlignment="Center" Click="BackButtno_Click" >Назад</Button>
+        <Border  Style="{StaticResource CustomBorderStyle}" Grid.Row="1" HorizontalAlignment="Center" Width="800" >
+            <Frame  x:Name="mainframe" ContentRendered="mainframe_ContentRendered" Grid.Row="1" NavigationUIVisibility="Hidden" HorizontalAlignment="Left" Width="800" ></Frame>
+            <Border.Background>
+                <ImageBrush Opacity="0.05" Stretch="None" ImageSource="/images/fon1.jpg"></ImageBrush>
+            </Border.Background>
+        </Border >
+    </Grid>
+</Window>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4fde05d224024358923567db03be2a0b" Name="Diagram1">
+        <EntityTypeShape EntityType="KURSModel.CONSUMABLE" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KURSModel.DELIVERY" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KURSModel.EMPLOYEE" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KURSModel.GOODS_ARIVAL" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KURSModel.GOODS_CARE" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KURSModel.INVOICE" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KURSModel.PROVIDER" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KURSModel.ROL" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KURSModel.STOCK" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KURSModel.sysdiagram" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="KURSModel.FK_CONSUMABLES_GOODS_CARE" ManuallyRouted="false" />
+        <AssociationConnector Association="KURSModel.FK_STOCK2" ManuallyRouted="false" />
+        <AssociationConnector Association="KURSModel.FK_DELIVERY" ManuallyRouted="false" />
+        <AssociationConnector Association="KURSModel.FK_DELIVERY_GOODS_CARE" ManuallyRouted="false" />
+        <AssociationConnector Association="KURSModel.FK_ROLS" ManuallyRouted="false" />
+        <AssociationConnector Association="KURSModel.FK_STOCK1" ManuallyRouted="false" />
+        <AssociationConnector Association="KURSModel.FK_INVOICE" ManuallyRouted="false" />
+        <AssociationConnector Association="KURSModel.FK_PROVIDER" ManuallyRouted="false" />
+        <AssociationConnector Association="KURSModel.FK_STOCK" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

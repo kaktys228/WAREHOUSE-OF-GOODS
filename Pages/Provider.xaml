@@ -1,0 +1,65 @@
+﻿<Page x:Class="курсовая_работа.Pages.Provider"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:курсовая_работа.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="950"
+      Title="Просмотр накладных" Loaded="Page_Loaded">
+
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Foreground="White"  HorizontalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="7" FontSize="24" Grid.Column="6">Просмотр накладных</Label>
+        <Label  Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="1" Grid.ColumnSpan="7" FontSize="16" Grid.Column="11">Расходная накладная</Label>
+        <Label  Foreground="White"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="1" Grid.ColumnSpan="7" FontSize="16" Grid.Column="2">Приходная накладная</Label>
+        <TextBlock Foreground="White"  Margin="1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="9" FontSize="15" FontWeight="Medium"  FontFamily="Montserrat" TextWrapping="Wrap" TextAlignment="Center" Grid.Column="5">Выберите и нажмите на накладную для детального просмотра информации </TextBlock>
+        <DataGrid  x:Name="DataGrid" Background="#5854ab" AutoGenerateColumns="False" IsReadOnly="True" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="8" Grid.RowSpan="3" ItemsSource="{Binding INVOICE}" SelectionChanged="DataGrid_SelectionChanged" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер приходной накладной" Binding="{Binding INVOICE_ID}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Итоговая сумма" Binding="{Binding FINAL_SUM}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="DataGrid2"  Background="#5854ab" AutoGenerateColumns="False" IsReadOnly="True" Grid.Column="10" Grid.Row="2" Grid.ColumnSpan="8" Grid.RowSpan="3" ItemsSource="{Binding CONSUMABLE}" SelectionChanged="DataGrid2_SelectionChanged" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер расходной накладной" Binding="{Binding CONSUMABLES_ID}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Итоговая сумма" Binding="{Binding FINAL_SUM}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Foreground="White" x:Name="PrintButton" Content="Формировать документ " Grid.ColumnSpan="7" Width="250" Height="60" Grid.Column="6"  Grid.Row="5" Click="PrintButton_Click" >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Page>

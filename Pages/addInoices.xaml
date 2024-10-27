@@ -1,0 +1,63 @@
+﻿<Page x:Class="курсовая_работа.Pages.addInoices"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:курсовая_работа.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="Создание новой накладной" Loaded="Page_Loaded">
+
+    <Grid >
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" >
+            <Label Foreground="White" FontSize="20" HorizontalAlignment="Center">Создание  накладной</Label>
+            <StackPanel Orientation="Horizontal" >
+                <StackPanel Orientation="Vertical" >
+                    <TextBlock x:Name="pricetext" Margin="8" Height="30"   Foreground="White" Text="Цена:"></TextBlock>
+                    <TextBlock x:Name="counttext"  Margin="5" Height="30"   Foreground="White" Text="Количество:"></TextBlock>
+                    <TextBlock  Margin="5" Height="30"   Foreground="White" Text="Поставщик:"></TextBlock>
+                    <TextBlock  Margin="5" Height="30"   Foreground="White" Text="Склад:"></TextBlock>
+                    <TextBlock x:Name="tovartext"  Margin="5" Height="30"    Foreground="White" Text="Товары:" ></TextBlock>
+                </StackPanel >
+                <StackPanel  Orientation="Vertical">
+                    <TextBox Margin="5" Width="200" Height="30"  x:Name="PriceBox" Text="{Binding PRICE}"  ></TextBox>
+                    <TextBox Margin="5" Width="200" Height="30"  x:Name="CountsBox" Text="{Binding COUNTS}"  ></TextBox>
+                    <ComboBox Margin="5"  Width="200"  x:Name="PROVIDERComboBox" SelectedItem="{Binding PROVIDER, Mode=TwoWay}"  DisplayMemberPath="NAMES" Height="30"></ComboBox>
+                    <ComboBox Margin="5"   x:Name="StockComboBox" SelectedItem="{Binding STOCK, Mode=TwoWay}" DisplayMemberPath="NAMES" Height="30">
+                    </ComboBox>
+                    <ComboBox Margin="5" Height="30" x:Name="TovarBox" DisplayMemberPath="NAMES"  SelectionChanged="TovarBox_SelectionChanged"   ></ComboBox>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="AddButton" Margin="5" Foreground="White"  Content="Добавить" Click="AddButton_Click" FontSize="16" Width="100" Height="30" >
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="15"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="RemoveButton" Foreground="White" Margin="5" Content="Удалить" Click="RemoveButton_Click" FontSize="16" Width="100" Height="30" >
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="15"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+            <DataGrid  x:Name="TovarGrid" Background="#5854ab" Height="200" AutoGenerateColumns="False" SelectionChanged="TovarGrid_SelectionChanged_1">
+                <DataGrid.Columns >
+                    <DataGridTextColumn  Binding="{Binding DELIVERY.NAMES}" Header="Товары"></DataGridTextColumn>
+                    <DataGridTextColumn  Binding="{Binding PRICE}" Header="Цена"></DataGridTextColumn>
+                    <DataGridTextColumn  Binding="{Binding COUNTS}" Header="Количество"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="registButton"  Content="Добавить" Margin="10" Click="registButton_Click" FontSize="16" Width="200" Height="40" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="15"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>

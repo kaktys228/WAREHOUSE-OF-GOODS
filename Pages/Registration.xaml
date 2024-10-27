@@ -1,0 +1,45 @@
+﻿<Page x:Class="курсовая_работа.Registration"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:курсовая_работа"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="Регистрация сотрудников" Loaded="Page_Loaded">
+
+    <Grid >
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Margin="8" FontSize="24" HorizontalAlignment="Center" Foreground="White" Content="Регистрация" ></Label>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
+                    <Label Margin="8" Foreground="White" Content="Логин:" ></Label>
+                    <Label Margin="5"  Foreground="White" Content="Пароль:" ></Label>
+                    <Label Margin="5"  Foreground="White" Content="Имя:" ></Label>
+                    <Label Margin="5"  Foreground="White" Content="Фамилия:"></Label>
+                    <Label Margin="5"   Foreground="White" Content="Отчество:"></Label>
+                    <Label  Margin="5"  Foreground="White" Content="Номер телефона:"></Label>
+                    <Label  Margin="5"  Foreground="White" Content="Роль:"></Label>
+                    <Label  Margin="5"  Foreground="White" Content="Склад:"></Label>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBox   Width="200" x:Name="LoginBox" Text="{Binding LOGINS}"  Height="30" TextChanged="LoginBox_TextChanged"></TextBox>
+                    <TextBox   Width="200"   x:Name="PasswordBox" Text="{Binding PASSWORDS}" Height="30" TextChanged="PasswordBox_TextChanged" ></TextBox>
+                    <TextBox   Width="200"  x:Name="FirstNameBox" Text="{Binding FIRSTNAME}" Height="30" TextChanged="FirstNameBox_TextChanged" ></TextBox>
+                    <TextBox Width="200"  x:Name="LastNameBox"  Text="{Binding LASTNAME}" Height="30" TextChanged="LastNameBox_TextChanged"></TextBox>
+                    <TextBox  Width="200"  x:Name="MidleNameBox" Text="{Binding MIDLENAME}" Height="30" TextChanged="MidleNameBox_TextChanged"></TextBox>
+                    <TextBox  Width="200"   x:Name="PhoneBox" Text="{Binding PHONE}" Height="30" PreviewTextInput="PhoneBox_PreviewTextInput1" />
+                    <ComboBox  Width="200"  x:Name="RoleComboBox" SelectedItem="{Binding ROL, Mode=TwoWay}"  DisplayMemberPath="NAMES" Height="30"></ComboBox>
+                    <ComboBox  Width="200"  x:Name="StockComboBox" SelectedItem="{Binding STOCK, Mode=TwoWay}" DisplayMemberPath="NAMES" Height="30"></ComboBox>
+                </StackPanel>
+            </StackPanel>
+            <Button x:Name="registButton" Margin="10" Content="Добавить" Click="registButton_Click" FontSize="16" Width="200" Height="30" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="15"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,67 @@
+D:\Project\курсовая работа\курсовая работа\bin\Debug\курсовая работа.exe.config
+D:\Project\курсовая работа\курсовая работа\bin\Debug\курсовая работа.exe
+D:\Project\курсовая работа\курсовая работа\bin\Debug\курсовая работа.pdb
+D:\Project\курсовая работа\курсовая работа\obj\Debug\курсовая работа.csproj.AssemblyReference.cache
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\autoresation.g.cs
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\Registration.g.cs
+D:\Project\курсовая работа\курсовая работа\obj\Debug\App.g.cs
+D:\Project\курсовая работа\курсовая работа\obj\Debug\курсовая работа_MarkupCompile.cache
+D:\Project\курсовая работа\курсовая работа\obj\Debug\курсовая работа_MarkupCompile.lref
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\autoresation.baml
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\Registration.baml
+D:\Project\курсовая работа\курсовая работа\obj\Debug\курсовая работа.g.resources
+D:\Project\курсовая работа\курсовая работа\obj\Debug\курсовая_работа.Properties.Resources.resources
+D:\Project\курсовая работа\курсовая работа\obj\Debug\курсовая работа.csproj.GenerateResource.cache
+D:\Project\курсовая работа\курсовая работа\obj\Debug\курсовая работа.csproj.CoreCompileInputs.cache
+D:\Project\курсовая работа\курсовая работа\obj\Debug\курсовая работа.exe
+D:\Project\курсовая работа\курсовая работа\obj\Debug\курсовая работа.pdb
+D:\Project\курсовая работа\курсовая работа\bin\Debug\EntityFramework.dll
+D:\Project\курсовая работа\курсовая работа\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\курсовая работа\курсовая работа\bin\Debug\EntityFramework.xml
+D:\Project\курсовая работа\курсовая работа\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\курсовая работа\курсовая работа\bin\Debug\ru\EntityFramework.resources.dll
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\Admin.g.cs
+D:\Project\курсовая работа\курсовая работа\obj\Debug\курсовая работа_Content.g.cs
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\Admin.baml
+D:\Project\курсовая работа\курсовая работа\obj\Debug\курсовая работа.csproj.CopyComplete
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\Manager.g.cs
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\Provider.g.cs
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\Manager.baml
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\Provider.baml
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\invoiceDetailsPage1.g.cs
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\invoiceDetailsPage1.baml
+D:\Project\курсовая работа\курсовая работа\bin\Debug\ControlzEx.dll
+D:\Project\курсовая работа\курсовая работа\bin\Debug\MahApps.Metro.dll
+D:\Project\курсовая работа\курсовая работа\bin\Debug\MaterialDesignColors.dll
+D:\Project\курсовая работа\курсовая работа\bin\Debug\MaterialDesignThemes.MahApps.dll
+D:\Project\курсовая работа\курсовая работа\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Project\курсовая работа\курсовая работа\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\Project\курсовая работа\курсовая работа\bin\Debug\ControlzEx.pdb
+D:\Project\курсовая работа\курсовая работа\bin\Debug\ControlzEx.xml
+D:\Project\курсовая работа\курсовая работа\bin\Debug\MahApps.Metro.pdb
+D:\Project\курсовая работа\курсовая работа\bin\Debug\MahApps.Metro.xml
+D:\Project\курсовая работа\курсовая работа\bin\Debug\MaterialDesignColors.pdb
+D:\Project\курсовая работа\курсовая работа\bin\Debug\MaterialDesignThemes.MahApps.pdb
+D:\Project\курсовая работа\курсовая работа\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Project\курсовая работа\курсовая работа\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Project\курсовая работа\курсовая работа\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\Project\курсовая работа\курсовая работа\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\Project\курсовая работа\курсовая работа\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+D:\Project\курсовая работа\курсовая работа\obj\Debug\App.baml
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\AddDeliveries.g.cs
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\AddDeliveries.baml
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\AdminMenu.g.cs
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\AdminMenu.baml
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\BuyDeliveryPage.g.cs
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\BuyDeliveryPage.baml
+D:\Project\курсовая работа\курсовая работа\obj\Debug\AllWindows\MainWindow.g.cs
+D:\Project\курсовая работа\курсовая работа\obj\Debug\AllWindows\MainWindow.baml
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\InvoiceEdit.g.cs
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\InvoiceEdit.baml
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\PrintInvoice.g.cs
+D:\Project\курсовая работа\курсовая работа\bin\Debug\Xceed.Document.NET.dll
+D:\Project\курсовая работа\курсовая работа\bin\Debug\Xceed.Words.NET.dll
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\PrintInvoice.baml
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\addInoices.g.cs
+D:\Project\курсовая работа\курсовая работа\obj\Debug\Pages\addInoices.baml
+D:\Project\курсовая работа\курсовая работа\bin\Debug\BouncyCastle.Crypto.dll

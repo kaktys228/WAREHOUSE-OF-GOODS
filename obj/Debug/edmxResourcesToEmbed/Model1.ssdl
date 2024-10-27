@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище KURSModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CONSUMABLES">
+    <Key>
+      <PropertyRef Name="CONSUMABLES_ID" />
+    </Key>
+    <Property Name="CONSUMABLES_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STOCK_ID" Type="int" Nullable="false" />
+    <Property Name="FINAL_SUM" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DELIVERY">
+    <Key>
+      <PropertyRef Name="DELIVERY_ID" />
+    </Key>
+    <Property Name="DELIVERY_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COUNTS" Type="int" Nullable="false" />
+    <Property Name="NAMES" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="PRICE" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EMPLOYEES">
+    <Key>
+      <PropertyRef Name="EMPLOYEES_ID" />
+    </Key>
+    <Property Name="EMPLOYEES_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STOCK_ID" Type="int" Nullable="false" />
+    <Property Name="ROLS_ID" Type="int" Nullable="false" />
+    <Property Name="FIRSTNAME" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="LASTNAME" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="MIDLENAME" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="PHONE" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="LOGINS" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="PASSWORDS" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GOODS_ARIVAL">
+    <Key>
+      <PropertyRef Name="GOODS_ARIVAL_ID" />
+    </Key>
+    <Property Name="GOODS_ARIVAL_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="INVOICE_ID" Type="int" Nullable="false" />
+    <Property Name="DELIVERY_ID" Type="int" Nullable="false" />
+    <Property Name="PRICE" Type="money" Nullable="false" />
+    <Property Name="COUNTS" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GOODS_CARE">
+    <Key>
+      <PropertyRef Name="GOODS_CARE_ID" />
+    </Key>
+    <Property Name="GOODS_CARE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PRICE" Type="money" Nullable="false" />
+    <Property Name="COUNTS" Type="int" Nullable="false" />
+    <Property Name="DELIVERY_ID" Type="int" Nullable="false" />
+    <Property Name="CONSUMABLES_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="INVOICE">
+    <Key>
+      <PropertyRef Name="INVOICE_ID" />
+    </Key>
+    <Property Name="INVOICE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FINAL_SUM" Type="money" Nullable="false" />
+    <Property Name="STOCK_ID" Type="int" Nullable="false" />
+    <Property Name="PROVIDER_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PROVIDERS">
+    <Key>
+      <PropertyRef Name="PROVIDER_ID" />
+    </Key>
+    <Property Name="PROVIDER_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ADRESS" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PHONE" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="NAMES" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ROLS">
+    <Key>
+      <PropertyRef Name="ROLS_ID" />
+    </Key>
+    <Property Name="ROLS_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAMES" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="STOCK">
+    <Key>
+      <PropertyRef Name="STOCK_ID" />
+    </Key>
+    <Property Name="STOCK_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ADRESS" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NAMES" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CONSUMABLES_GOODS_CARE">
+    <End Role="CONSUMABLES" Type="Self.CONSUMABLES" Multiplicity="1" />
+    <End Role="GOODS_CARE" Type="Self.GOODS_CARE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONSUMABLES">
+        <PropertyRef Name="CONSUMABLES_ID" />
+      </Principal>
+      <Dependent Role="GOODS_CARE">
+        <PropertyRef Name="CONSUMABLES_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DELIVERY">
+    <End Role="DELIVERY" Type="Self.DELIVERY" Multiplicity="1" />
+    <End Role="GOODS_ARIVAL" Type="Self.GOODS_ARIVAL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DELIVERY">
+        <PropertyRef Name="DELIVERY_ID" />
+      </Principal>
+      <Dependent Role="GOODS_ARIVAL">
+        <PropertyRef Name="DELIVERY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DELIVERY_GOODS_CARE">
+    <End Role="DELIVERY" Type="Self.DELIVERY" Multiplicity="1" />
+    <End Role="GOODS_CARE" Type="Self.GOODS_CARE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DELIVERY">
+        <PropertyRef Name="DELIVERY_ID" />
+      </Principal>
+      <Dependent Role="GOODS_CARE">
+        <PropertyRef Name="DELIVERY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INVOICE">
+    <End Role="INVOICE" Type="Self.INVOICE" Multiplicity="1" />
+    <End Role="GOODS_ARIVAL" Type="Self.GOODS_ARIVAL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="INVOICE">
+        <PropertyRef Name="INVOICE_ID" />
+      </Principal>
+      <Dependent Role="GOODS_ARIVAL">
+        <PropertyRef Name="INVOICE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROVIDER">
+    <End Role="PROVIDERS" Type="Self.PROVIDERS" Multiplicity="1" />
+    <End Role="INVOICE" Type="Self.INVOICE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROVIDERS">
+        <PropertyRef Name="PROVIDER_ID" />
+      </Principal>
+      <Dependent Role="INVOICE">
+        <PropertyRef Name="PROVIDER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ROLS">
+    <End Role="ROLS" Type="Self.ROLS" Multiplicity="1" />
+    <End Role="EMPLOYEES" Type="Self.EMPLOYEES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROLS">
+        <PropertyRef Name="ROLS_ID" />
+      </Principal>
+      <Dependent Role="EMPLOYEES">
+        <PropertyRef Name="ROLS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK">
+    <End Role="STOCK" Type="Self.STOCK" Multiplicity="1" />
+    <End Role="INVOICE" Type="Self.INVOICE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK">
+        <PropertyRef Name="STOCK_ID" />
+      </Principal>
+      <Dependent Role="INVOICE">
+        <PropertyRef Name="STOCK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK1">
+    <End Role="STOCK" Type="Self.STOCK" Multiplicity="1" />
+    <End Role="EMPLOYEES" Type="Self.EMPLOYEES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK">
+        <PropertyRef Name="STOCK_ID" />
+      </Principal>
+      <Dependent Role="EMPLOYEES">
+        <PropertyRef Name="STOCK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STOCK2">
+    <End Role="STOCK" Type="Self.STOCK" Multiplicity="1" />
+    <End Role="CONSUMABLES" Type="Self.CONSUMABLES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STOCK">
+        <PropertyRef Name="STOCK_ID" />
+      </Principal>
+      <Dependent Role="CONSUMABLES">
+        <PropertyRef Name="STOCK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище KURSModelContainer">
+    <EntitySet Name="CONSUMABLES" EntityType="Self.CONSUMABLES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DELIVERY" EntityType="Self.DELIVERY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMPLOYEES" EntityType="Self.EMPLOYEES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GOODS_ARIVAL" EntityType="Self.GOODS_ARIVAL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GOODS_CARE" EntityType="Self.GOODS_CARE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="INVOICE" EntityType="Self.INVOICE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROVIDERS" EntityType="Self.PROVIDERS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ROLS" EntityType="Self.ROLS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="STOCK" EntityType="Self.STOCK" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CONSUMABLES_GOODS_CARE" Association="Self.FK_CONSUMABLES_GOODS_CARE">
+      <End Role="CONSUMABLES" EntitySet="CONSUMABLES" />
+      <End Role="GOODS_CARE" EntitySet="GOODS_CARE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DELIVERY" Association="Self.FK_DELIVERY">
+      <End Role="DELIVERY" EntitySet="DELIVERY" />
+      <End Role="GOODS_ARIVAL" EntitySet="GOODS_ARIVAL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DELIVERY_GOODS_CARE" Association="Self.FK_DELIVERY_GOODS_CARE">
+      <End Role="DELIVERY" EntitySet="DELIVERY" />
+      <End Role="GOODS_CARE" EntitySet="GOODS_CARE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INVOICE" Association="Self.FK_INVOICE">
+      <End Role="INVOICE" EntitySet="INVOICE" />
+      <End Role="GOODS_ARIVAL" EntitySet="GOODS_ARIVAL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROVIDER" Association="Self.FK_PROVIDER">
+      <End Role="PROVIDERS" EntitySet="PROVIDERS" />
+      <End Role="INVOICE" EntitySet="INVOICE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROLS" Association="Self.FK_ROLS">
+      <End Role="ROLS" EntitySet="ROLS" />
+      <End Role="EMPLOYEES" EntitySet="EMPLOYEES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK" Association="Self.FK_STOCK">
+      <End Role="STOCK" EntitySet="STOCK" />
+      <End Role="INVOICE" EntitySet="INVOICE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK1" Association="Self.FK_STOCK1">
+      <End Role="STOCK" EntitySet="STOCK" />
+      <End Role="EMPLOYEES" EntitySet="EMPLOYEES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STOCK2" Association="Self.FK_STOCK2">
+      <End Role="STOCK" EntitySet="STOCK" />
+      <End Role="CONSUMABLES" EntitySet="CONSUMABLES" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
